@@ -1,8 +1,11 @@
+// 
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("/user);
 
-
+const appendFileAsync util.promisify(fs.appendFile);
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 // array of questions for user
 const questions = [
     {
@@ -53,11 +56,18 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile("README.md", generateMarkdown(response), function (err) {
+        if (err) throw err;
+    });
+
 }
 
 // function to initialize program
 function init() {
-
+    inquirer.
+        prompt(questionsArray)
+        .then((response) => writeToFile(response))
+        .catch((err) => console.log(err));
 }
 
 // function call to initialize program
