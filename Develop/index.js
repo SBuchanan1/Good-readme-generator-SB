@@ -1,6 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown.js");
+const generateMarkdown = require("/user);
 
 
 // array of questions for user
@@ -42,7 +42,7 @@ const questions = [
     {
         type: "input",
         name: "tests",
-        message: "What tests did you run?",
+        message: "What tests did you  run?",
     },
     {
         type: "input",
