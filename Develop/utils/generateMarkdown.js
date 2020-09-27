@@ -11,9 +11,8 @@ ${response.tableOfContents[4]}
 ${response.tableOfContents[5]}
 
 `
-  ${ response.description }
 
-  ; { type: inputs }
+    ; { type: inputs }
 }
 
 module.exports = generateMarkdown;
