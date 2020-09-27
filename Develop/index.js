@@ -75,7 +75,7 @@ init();
 
 inquirer
     .prompt(questionsArray).then(function (response) {
-        console.logO(response);
+        console.log(response);
     });
 
 choices: [
