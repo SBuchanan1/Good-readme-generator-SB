@@ -72,3 +72,18 @@ function init() {
 
 // function call to initialize program
 init();
+
+inquirer
+    .prompt(questionsArray).then(function (response) {
+        console.logO(response);
+    });
+
+choices: [
+    "Installation",
+    "Usage",
+    "License",
+    "Contributors",
+    "Tests",
+    "Questions",
+
+]
