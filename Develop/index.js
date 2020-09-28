@@ -1,11 +1,9 @@
 // 
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("/user);
+const generateMarkdown = require("./utils/generateMarkdown.js)
+// const appendFileAsync util.promisify(fs.appendFile);s
 
-const appendFileAsync util.promisify(fs.appendFile);
-const readFileAsync = util.promisify(fs.readFile);
-const writeFileAsync = util.promisify(fs.writeFile);
 // array of questions for user
 const questions = [
     {
@@ -32,7 +30,7 @@ const questions = [
         type: "input",
         name: "usage",
         message: "Provide instructions for use",
-    {
+
         type: "input",
         name: "license",
         message: "What license did you use?",
@@ -74,8 +72,13 @@ function init() {
 init();
 
 inquirer
-    .prompt(questionsArray).then(function (response) {
+    .prompt(questionsArray).then((response) => {
         console.log(response);
+        let generatedMe = (generateMarkdown)(response);
+        fs.writeFile("newREADME.md", generatedMe, (err) => {
+            if (err) throw (err);
+            console.long("You generated a bew README!");
+        });
     });
 
 choices: [

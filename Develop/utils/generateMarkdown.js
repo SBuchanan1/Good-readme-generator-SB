@@ -9,7 +9,12 @@ ${response.tableOfContents[2]}
 ${response.tableOfContents[3]}
 ${response.tableOfContents[4]}
 ${response.tableOfContents[5]}
-
+${response.installation}
+${response.usage}
+${response.license}
+${response.contributors}
+${response.tests}
+${response.questions}
 `
 
     ; { type: inputs }
