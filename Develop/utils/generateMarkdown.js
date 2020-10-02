@@ -1,23 +1,27 @@
 // function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-  ![<ALT>](https://img.shields.io/badge/${response.label}-${response.message}-${response.color})
+function generateMarkdown(response) {
+  return `# ${response.title}
+  ![<ALT>](https://img.shields.io/badge/License-${response.message}-purple.svg)
+
+  *[description](#description)
 ${response.description}
-${response.tableOfContents[0]}
-${response.tableOfContents[1]}
-${response.tableOfContents[2]}
-${response.tableOfContents[3]}
-${response.tableOfContents[4]}
-${response.tableOfContents[5]}
+*[tableOfContents](#tableOfContents)
+${response.tableOfContents}
+*[installation](#installation)
 ${response.installation}
+*[usage](#usage)
 ${response.usage}
+*[license](#license)
 ${response.license}
+*[contributors](#contributors)
 ${response.contributors}
+*[tests](#tests)
 ${response.tests}
+*[response](#response)
 ${response.questions}
 `
 
-    ; { type: inputs }
+
 }
 
 module.exports = generateMarkdown;

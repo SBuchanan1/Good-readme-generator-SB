@@ -1,7 +1,8 @@
 //variables importing information
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown.js)
+const generateMarkdown = require("./utils/generateMarkdown.js");
+const path = require("path");
 // const appendFileAsync util.promisify(fs.appendFile);s
 
 // array of questions for user
@@ -20,6 +21,15 @@ const questions = [
         type: "list",
         name: "table of contents",
         message: "List table of contents",
+        choices: [
+            "Installation",
+            "Usage",
+            "License",
+            "Contributors",
+            "Tests",
+            "Questions",
+
+        ]
     },
     {
         type: "input",
@@ -59,34 +69,26 @@ function writeToFile(fileName, data) {
     });
 
 }
-
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+}
 // function to initialize program
 function init() {
-    inquirer.
-        prompt(questionsArray)
-        .then((response) => writeToFile(response))
-        .catch((err) => console.log(err));
-}
+    inquirer
+        .prompt(questions).then((response) => {
+            console.log(response);
+            let generatedMe = generateMarkdown({ ...response });
+            writeToFile("newREADME.md", generatedMe)
 
-// function call to initialize program
+            console.log("You generated a new README!");
+        });
+};// function call to initialize program
+
 init();
 
-inquirer
-    .prompt(questionsArray).then((response) => {
-        console.log(response);
-        let generatedMe = (generateMarkdown)(response);
-        fs.writeFile("newREADME.md", generatedMe, (err) => {
-            if (err) throw (err);
-            console.long("You generated a bew README!");
-        });
-    });
 
-choices: [
-    "Installation",
-    "Usage",
-    "License",
-    "Contributors",
-    "Tests",
-    "Questions",
 
-]
+
+
+
+
