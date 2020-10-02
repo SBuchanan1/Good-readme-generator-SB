@@ -3,21 +3,21 @@ function generateMarkdown(response) {
   return `# ${response.title}
   ![<ALT>](https://img.shields.io/badge/License-${response.message}-purple.svg)
 
-  *[description](#description)
+  ##Description
 ${response.description}
-*[tableOfContents](#tableOfContents)
+##TableOfContents
 ${response.tableOfContents}
-*[installation](#installation)
+## Installation
 ${response.installation}
-*[usage](#usage)
+## Usage
 ${response.usage}
-*[license](#license)
+## License
 ${response.license}
-*[contributors](#contributors)
+## Contributors
 ${response.contributors}
-*[tests](#tests)
+## Tests
 ${response.tests}
-*[response](#response)
+## Questions
 ${response.questions}
 `
 
