@@ -4,6 +4,7 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 const path = require("path");
 // const appendFileAsync util.promisify(fs.appendFile);s
+// const writeFileAsync = util.promisify(fs.writeFile);
 
 // array of questions for user
 const questions = [
