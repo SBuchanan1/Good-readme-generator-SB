@@ -1,4 +1,4 @@
-const licenseBadges = require("./licenseBadges");
+// const licenseBadges = require("./licenseBadges");
 
 // Function to Generate README
 
