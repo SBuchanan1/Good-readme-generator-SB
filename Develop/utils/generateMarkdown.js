@@ -4,24 +4,12 @@ const licenseBadges = require("./licenseBadges");
 
 function documentGenerator(response) {
   return `#${response.title}
-  ![<ALT>](https://img.shields.io/badge/License-${response.message}-purple.svg)
+  
 
   ## Description
   ${response.description}
 
-  ***
 
-  ## Table of Contents
-
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contributors](#contributors)
-  * [Tests](#tests)
-  * [Questions](#questions)
-  * 
-  
-  ***
 
   ##Installation
   ${response.installation}
