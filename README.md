@@ -28,4 +28,4 @@ npm test
 
 ## Questions
 
-No
+If you have any further questions, please contact me at syd.buch@gmail.com
